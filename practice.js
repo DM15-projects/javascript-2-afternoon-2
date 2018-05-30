@@ -135,30 +135,26 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-function finder(arr) {
-  let myNum = getRandomArbitrary();
-  // myNum;
-  for (let i = 0; i < arr.length; i++) {
-    // console.log(arr[i]);
-    if (arr[i] !== myNum) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-}
-
 // function finder(arr) {
-//   let myNum = getRandomArbitrary();
-//   myNum;
-//   for (i = 0; i < arr.length; i++) {
-//     if (arr.indexOf(myNum) !== -1) {
+//   let random = getRandomArbitrary();
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i === arr.indexOf(arr[i])) {
 //       return true;
 //     } else {
 //       return false;
 //     }
 //   }
 // }
+function finder(arr) {
+  let random = getRandomArbitrary();
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] == random) {
+      return true;
+    }
+  }
+  return false;
+}
+
 ////////// PROBLEM 8 //////////
 
 // Do not edit the code below.
@@ -193,7 +189,13 @@ var myGroceryList = ["chips", "pizza", "hotpockets", "MtnDew", "corndogs"];
 */
 
 //Code Here
-
+function maker() {
+  var myArray = [];
+  for (i = 1; i <= 215; i++) {
+    myArray.push(i);
+  }
+  return myArray;
+}
 ////////// PROBLEM 10 //////////
 
 // Do not edit the code below.
@@ -207,7 +209,32 @@ var numbers = [5, "9", 16, 19, "25", "34", 48];
 */
 
 //Code Here
+// function addTen(numbers) {
+//   var newArray = [];
+//   for (i = 0; i < numbers.length; i++) {
+//     parseInt(numbers[i], 10);
+//     numbers[i] += 10;
+//     newArray.push(numbers[i]);
+//   }
+//   return newArray;
+// }
 
+var thisArray = [1, 2, "52", 3, "1"];
+function check(thisArray) {
+  for (i = 0; i < thisArray.length; i++) {
+    var noString = parseInt(thisArray[i]) + 10;
+    // console.log(thisArray[i]);
+    console.log(noString);
+
+    // parseInt(thisArray[i]);
+    // thisArray[i] += 10;
+  }
+  return thisArray;
+}
+check(thisArray);
+
+// console.log(check(thisArray));
+// console.log(parseInt("3"));
 ////////// PROBLEM 11 //////////
 
 // Do not edit the code below.
@@ -278,14 +305,19 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
 //Code Here
-
+for (i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1);
+  }
+}
 ////////// PROBLEM 13 //////////
 
 /*
@@ -294,7 +326,7 @@ var colt = {
 */
 
 //Code Here
-
+var users = [];
 /*
   Now add three user objects to your users array. Each user object should contain the following properties. name, email, password, username.
 
@@ -311,7 +343,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(
+  {
+    name: "tim",
+    email: "blah@gmail.com",
+    password: "pass",
+    username: "timtime"
+  },
+  {
+    name: "billy",
+    email: "wildbill@gmail.com",
+    password: "billyboy",
+    username: "willthethrill"
+  },
+  user1
+);
 /*
   Now you have a very common data structure. 
   Twitter is a good use case.
@@ -323,7 +369,11 @@ var user1 = {
 */
 
 //Code Here
-
+for (i = 0; i < users.length; i++) {
+  if (users[i].email === "tylermcginnis33@gmail.com") {
+    users.splice(i, 1);
+  }
+}
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
